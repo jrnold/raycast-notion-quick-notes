@@ -1,0 +1,66 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "save-notion-notes",
+  "title": "Save Notion Notes",
+  "description": "Quickly save notes to notion",
+  "icon": "notion-logo.png",
+  "author": "jrnold",
+  "license": "MIT",
+  "preferences": [
+    {
+      "name": "apiKey",
+      "title": "Notion API Key",
+      "description": "Notion API Key. Create one at https://www.notion.so/my-integrations.",
+      "type": "password",
+      "required": true
+    },
+    {
+      "name": "databaseId",
+      "title": "Notes Database ID",
+      "description": "Notes database ID",
+      "type": "textfield",
+      "required": true,
+      "placeholder": "Identifier for the Notion database that will store notes."
+    }
+  ],
+  "commands": [
+    {
+      "name": "create-note",
+      "title": "Save Note to Notion",
+      "description": "Save a note to Notion database",
+      "mode": "view"
+    },
+    {
+      "name": "append-note",
+      "title": "Append to Notion Notes",
+      "description": "Append to a daily notes page in Notion",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.46.0",
+    "@raycast/utils": "^1.4.16",
+    "@tryfabric/martian": "^1.2.4",
+    "moment": "^2.29.4",
+    "notion-to-md": "^2.5.5"
+  },
+  "devDependencies": {
+    "@types/node": "18.8.3",
+    "@types/node-fetch": "^2.6.2",
+    "@types/react": "18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.1",
+    "react-devtools": "^4.27.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  }
+}
